@@ -2,19 +2,16 @@ import React from 'react'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 const styles = {
-
   itemContainer: {
     position: "absolute",
     right: 48,
     top: 20,
-
     WebkitTransform:  "translateY(-50%)",
     MozTransform:  "translateY(-50%)",
     MsTransform:  "translateY(-50%)",
     OTransform:  "translateY(-50%)",
     transform: "translateY(-50%)"
   }
-
 };
 
 

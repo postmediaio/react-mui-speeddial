@@ -3,23 +3,16 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import { FabSpinner } from './fab-spinner';
 
 const styles = {
-
   container: {
     position: "relative",
     display: "inline-block"
   }
-
 };
 
-
-export const SpeedDial = React.createClass({
-
-  getInitialState() {
-    return {
-      internalOpen: false
-    }
-  },
-
+export class SpeedDial extends React.Component {
+  state = {
+    internalOpen: false
+  }
 
   handleFabTouchTap() {
     this.setState({
@@ -28,14 +21,13 @@ export const SpeedDial = React.createClass({
 
     let cb = this.props.onOpenCloseRequest;
     cb && cb();
-  },
-
+  }
 
   handleCloseRequest() {
     this.handleFabTouchTap();
-  },
+  }
 
-  render: function() {
+  render() {
 
     let { open, effect, style } = this.props;
 
@@ -56,25 +48,23 @@ export const SpeedDial = React.createClass({
       })
     );
 
-    return <div style={{...styles.container, ...style}}>
-
-      <FloatingActionButton
-        {...this.props.fabProps}
-        onTouchTap={this.handleFabTouchTap}
-      >
-        <FabSpinner
-          aContent={this.props.fabContentOpen}
-          bContent={this.props.fabContentClose || this.props.fabContentOpen}
-          showB={open}
-        />
-      </FloatingActionButton>
-
-      {enhancedChildren}
-
-    </div>;
+    return (
+      <div style={{...styles.container, ...style}}>
+        <FloatingActionButton
+          {...this.props.fabProps}
+          onTouchTap={this.handleFabTouchTap}
+        >
+          <FabSpinner
+            aContent={this.props.fabContentOpen}
+            bContent={this.props.fabContentClose || this.props.fabContentOpen}
+            showB={open}
+          />
+        </FloatingActionButton>
+        {enhancedChildren}
+      </div>
+    );
   }
-
-});
+}
 
 SpeedDial.defaultProps = {
   itemsPosition: 'above' // above or below
