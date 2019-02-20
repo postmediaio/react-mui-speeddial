@@ -14,7 +14,7 @@ export class SpeedDial extends React.Component {
     internalOpen: false
   }
 
-  handleFabTouchTap() {
+  handleFabClick = () => {
     this.setState({
       internalOpen: !this.state.internalOpen
     });
@@ -23,8 +23,8 @@ export class SpeedDial extends React.Component {
     cb && cb();
   }
 
-  handleCloseRequest() {
-    this.handleFabTouchTap();
+  handleCloseRequest = () => {
+    this.handleFabClick();
   }
 
   render() {
@@ -52,7 +52,7 @@ export class SpeedDial extends React.Component {
       <div style={{...styles.container, ...style}}>
         <FloatingActionButton
           {...this.props.fabProps}
-          onTouchTap={this.handleFabTouchTap}
+          onClick={this.handleFabClick}
         >
           <FabSpinner
             aContent={this.props.fabContentOpen}
