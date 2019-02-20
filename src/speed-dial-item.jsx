@@ -2,19 +2,16 @@ import React from 'react'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 const styles = {
-
   itemContainer: {
     position: "absolute",
     right: 48,
     top: 20,
-
     WebkitTransform:  "translateY(-50%)",
     MozTransform:  "translateY(-50%)",
     MsTransform:  "translateY(-50%)",
     OTransform:  "translateY(-50%)",
     transform: "translateY(-50%)"
   }
-
 };
 
 
@@ -53,7 +50,7 @@ export class SpeedDialItem extends React.PureComponent {
     }),
   };
 
-  handleTouchTap(ev) {
+  handleClick(ev) {
     this.props.onCloseRequest();
     this.props.onTouchTap(ev);
   }
@@ -88,7 +85,7 @@ export class SpeedDialItem extends React.PureComponent {
         backgroundColor={this.props.backgroundColor}
         style={this.props.style}
         iconStyle={this.props.iconStyle}
-        onTouchTap={(ev) => { this.handleTouchTap(ev); }}
+        onClick={(ev) => { this.handleClick(ev); }}
       >
         {this.props.fabContent}
       </FloatingActionButton>

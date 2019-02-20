@@ -18,3 +18,8 @@ node_modules
 .DS_Store
 .idea
 npm-debug.log
+
+*.log
+
+# Make sure .npmrc isn't exposed to public repo
+.npmrc
