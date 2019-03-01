@@ -1,7 +1,7 @@
 {
   "name": "@postmedia/react-mui-speeddial",
-  "version": "1.0.0",
-  "description": "a speed dial component for Material UI",
+  "version": "1.1.0",
+  "description": "A speed dial component for Material UI",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jampy/react-mui-speeddial.git"

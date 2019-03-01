@@ -52,7 +52,15 @@ export class SpeedDialItem extends React.PureComponent {
 
   handleClick(ev) {
     this.props.onCloseRequest();
-    this.props.onTouchTap(ev);
+
+    if (this.props.onTouchTap) {
+      console.warn("[react-mui-speeddial] onTouchTap is deprecated, please use onClick instead");
+      this.props.onTouchTap(ev);
+    }
+
+    if (this.props.onClick) {
+      this.props.onClick(ev);
+    }
   }
 
   render() {
@@ -70,7 +78,7 @@ export class SpeedDialItem extends React.PureComponent {
     let fx = this.effects[this.props.effect];
 
     if (!fx)
-      fx = effects.none;
+      fx = this.effects.none;
 
     style = { ...style, ...fx(visible, index) };
 
